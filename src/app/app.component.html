@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="currency">
+        <div>
+
+            <div style="display: flex; justify-content: space-between;">
+                <h3>From</h3>
+
+                <select (input) ="onFromCurrency($event)">
+                    <option  *ngFor="let i of currencies">{{i}}</option>
+                </select>
+            </div>
+            <br>
+            
+
+           <input type="tel" id="inp" (input) = "fromValue($event)" value="0">
+
+        </div>
+        <button (click) = "Calculate()">Calculate</button>
+        <div>
+            <div style="display: flex; justify-content: space-between;">
+                <h3>To</h3>
+            <select (input) = "onToCurrency($event)">
+                <option  *ngFor="let i of currencies">{{i}}</option>
+            </select>
+            </div>
+            <br>
+            
+            <input type="tel" id="inp" disabled value={{toVal}}>
+        </div>
+    </div>
+</div>
